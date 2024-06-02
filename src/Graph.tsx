@@ -29,7 +29,7 @@ class Graph extends Component<IProps, {}> {
       timestamp: 'date',
       upper_bound: 'float',
       lower_bound: 'float',
-      trigger_alert; 'float',
+      trigger_alert: 'float',
     };
 
     if (window.perspective && window.perspective.worker()) {
@@ -55,9 +55,9 @@ class Graph extends Component<IProps, {}> {
 
   componentDidUpdate() {
     if (this.table) {
-      this.table.update(
+      this.table.update([
         DataManipulator.generateRow(this.props.data),
-      );
+        ]);
     }
   }
 }
